@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday My Love 💖</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to top right, #ffe0ec, #ff69b4);
+      font-family: 'Segoe UI', cursive;
+      overflow: hidden;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-top: 30px;
+      color: white;
+      text-shadow: 2px 2px 5px #ff1493;
+    }
+
+    .photo {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .photo img {
+      border-radius: 20px;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 4px solid white;
+      box-shadow: 0 0 15px #ff69b4;
+    }
+
+    .message {
+      background: white;
+      margin: 30px auto;
+      padding: 20px;
+      border-radius: 20px;
+      width: 85%;
+      max-width: 450px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 20, 147, 0.3);
+    }
+
+    .message h2 {
+      color: #ff1493;
+      margin-bottom: 10px;
+    }
+
+    .message p {
+      font-size: 1.1em;
+      color: #333;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .falling {
+      position: absolute;
+      top: -50px;
+      font-size: 22px;
+      animation: fall linear infinite;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    @keyframes fall {
+      0% {
+        top: -50px;
+        opacity: 1;
+        transform: rotate(0deg);
+      }
+      100% {
+        top: 110%;
+        opacity: 0;
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Balloon Style */
+    .balloon {
+      width: 25px;
+      height: 35px;
+      border-radius: 60% 60% 55% 55%;
+      position: absolute;
+      top: -50px;
+      animation: fall linear infinite;
+      cursor: pointer;
+      box-shadow: inset -1px -3px rgba(0,0,0,0.2);
+    }
+
+    .knot {
+      width: 5px;
+      height: 5px;
+      background: #555;
+      position: absolute;
+      bottom: -4px;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
+    }
+
+    .string {
+      width: 1.5px;
+      height: 15px;
+      background-color: #333;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 Happy Birthday My Love! 🎉</h1>
+
+  <div class="photo">
+    <img src="her-photo.jpg" alt="My Queen">
+  </div>
+
+  <div class="message">
+    <h2>To my Queen 💖</h2>
+    <p>
+      Happy Birthday, my beautiful SUSHMII Mayalu! 🎊<br>
+      Every moment with you is a blessing. 🫶<br>
+      I promise to love, support, and hold you forever.<br><br>
+      With all my heart,<br>
+      <strong>Your Future Husband,<br>KAUSHAL 🫣💋</strong>
+    </p>
+  </div>
+
+  <!-- Falling items -->
+  <script>
+    const messages = [
+      "You're my whole world 🌎",
+      "I love you endlessly 💘",
+      "You're my light 🕯️",
+      "You're my heartbeat ❤️",
+      "Happy Birthday, love 🎂",
+      "You complete me 🫶"
+    ];
+
+    const emojiItems = ["❤️", "🕯️"];
+
+    // 4 hearts
+    for (let i = 0; i < 4; i++) {
+      const heart = document.createElement("div");
+      heart.classList.add("falling");
+      heart.textContent = "❤️";
+      heart.style.left = Math.random() * window.innerWidth + "px";
+      heart.style.animationDuration = (7 + Math.random() * 2) + "s";
+      heart.onclick = () => {
+        alert(messages[Math.floor(Math.random() * messages.length)]);
+      };
+      document.body.appendChild(heart);
+    }
+
+    // 4 candles
+    for (let i = 0; i < 4; i++) {
+      const candle = document.createElement("div");
+      candle.classList.add("falling");
+      candle.textContent = "🕯️";
+      candle.style.left = Math.random() * window.innerWidth + "px";
+      candle.style.animationDuration = (7 + Math.random() * 2) + "s";
+      candle.onclick = () => {
+        alert(messages[Math.floor(Math.random() * messages.length)]);
+      };
+      document.body.appendChild(candle);
+    }
+
+    // 4 balloons
+    const balloonColors = ["red", "yellow", "blue"];
+    for (let i = 0; i < 4; i++) {
+      const balloon = document.createElement("div");
+      balloon.classList.add("balloon");
+      balloon.style.left = Math.random() * window.innerWidth + "px";
+      balloon.style.backgroundColor = balloonColors[i % balloonColors.length];
+      balloon.style.animationDuration = (7 + Math.random() * 2) + "s";
+
+      const knot = document.createElement("div");
+      knot.classList.add("knot");
+
+      const string = document.createElement("div");
+      string.classList.add("string");
+
+      balloon.appendChild(knot);
+      balloon.appendChild(string);
+
+      balloon.onclick = () => {
+        alert(messages[Math.floor(Math.random() * messages.length)]);
+      };
+
+      document.body.appendChild(balloon);
+    }
+  </script>
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-love.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</body>
+</html>
